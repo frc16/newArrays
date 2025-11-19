@@ -1,6 +1,28 @@
 import java.util.Scanner;
 
 public class BuscaPalabra {
+
+    public static int buscarCaracter(String texto, char c){
+        int contador = 0;
+        for(int i=0; i<texto.length(); i++){
+               if(texto.charAt(i)==c);{
+               contador++;
+               }
+        }
+        return 0;
+    }
+
+    public static void pintarDoble(int numero){
+        
+        System.out.println(2*numero);
+    }
+    public static char buscarLetra(String texto, int posicion){
+        if(posicion>=texto.length()){
+            return ' ';
+        }else{
+            return texto.charAt(posicion);
+        }
+    }
     
 public static String reemplazarPalabra(String textOriginal, String textoBuscar, String nuevoTexto) {
     if (textOriginal.contains(textoBuscar)) {
@@ -9,6 +31,8 @@ public static String reemplazarPalabra(String textOriginal, String textoBuscar, 
         return "texto no encontrado";
     }
 }
+
+
  
 public static void main(String[] args){
     Scanner scanner = new Scanner(System.in);
@@ -17,7 +41,15 @@ public static void main(String[] args){
 
     String texto = scanner.nextLine();
 
+    System.out.println("introduce caracter: ");
+
+    char caracter = scanner.nextLine().charAt(0); 
+
     System.out.println("texto a buscar: ");
+
+    int total = buscarCaracter(texto, caracter);
+
+    System.out.printf("aparece %d veces", total);
 
     String textoRemplazar = scanner.nextLine();
 
@@ -25,8 +57,17 @@ public static void main(String[] args){
 
     String textoNuevo = scanner.nextLine();
 
-    System.out.println(reemplazarPalabra(texto, textoRemplazar, textoNuevo));
+    String textoReemplazado = (reemplazarPalabra(texto, textoRemplazar, textoNuevo));
     
+    System.out.printf("texto reemplazado: %s%n", textoReemplazado);
+
+    System.out.println("introduce la posicion: ");
+
+    int posicion = scanner.nextInt();
+
+   char letra = buscarLetra(textoReemplazado, posicion);
+
+   System.out.println(letra);
 
     scanner.close();
 }
