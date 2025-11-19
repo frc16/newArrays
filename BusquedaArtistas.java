@@ -122,7 +122,7 @@ public class BusquedaArtistas {
 
         int contador =0;
         for(int i = 0; i<cartel.length;i++) {
-            if(cratel[i].getNombre().charAt('A')==inicial){
+            if(cartel[i].getNombre().charAt('A')==inicial){
                 contador++;
             }
         }
